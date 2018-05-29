@@ -24,6 +24,26 @@ font-size:12px;
 color:#ffabce;
 background-image:url("./image/haikei6.jpg");
 }
+.left-list{
+	float:left;
+}
+
+.right-list{
+	float:right;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style:none;
+}
+
+li {
+	float:left;
+	margin-right:40px;
+	color:#ff00cc
+}
+
 table {
 text-align:center;
 margin:0 auto;
@@ -52,6 +72,26 @@ clear:both;
 </style>
 </head>
 <body>
+<header>
+
+
+		<div class="top-menu">
+
+			<div class="left-list">
+			<ul class="top-li">
+			<li><a href='<s:url action="GoHomeAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>HOME</li>
+			<li><a href='<s:url action="MyPageAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>MYPAGE</li>
+			</ul>
+			</div>
+
+			<div class="right-list">
+			<ul>
+			<li><a href='<s:url action="LoginAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>LOGIN</li>
+			<li><a href='<s:url action="LogoutAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>LOGOUT</li>
+			</ul>
+			</div>
+		</div>
+	</header>
 <div id="header">
 <div id="pr">
 </div>
@@ -95,7 +135,7 @@ clear:both;
 </table>
 <div>
 <span>前画面に戻る場合は</span>
-<a href='<s:url action="HomeAction" />'>こちら</a>
+<a href='<s:url action="GoHomeAction" />'>こちら</a>
 </div>
 </div>
 </div>

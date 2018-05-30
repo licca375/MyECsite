@@ -17,6 +17,8 @@ private String loginUserId;
 
 private String loginPassword;
 
+private String result;
+
 public Map<String, Object> session;
 
 private LoginDAO loginDAO = new LoginDAO();

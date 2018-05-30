@@ -6,7 +6,7 @@ use ecsite2;
 /*ユーザーログイン情報テーブル*/
 drop table if exists login_user_transaction;
 create table login_user_transaction(
-id int not null primary key auto_increment,
+/*id int not null primary key auto_increment,*/
 login_id varchar(16) unique,
 login_pass varchar(16),
 user_name varchar(50),
@@ -43,10 +43,9 @@ delete_date datetime
 /*問い合わせテーブル*/
 drop table if exists inquiry;
 create table inquiry(
-inquiry_name varchar(50),
+name varchar(50),
 qtype varchar(50),
-body varchar(255),
-master_id varchar(50)
+body varchar(255)
 );
 
 INSERT INTO item_info_transaction(item_name, item_price, item_stock, item_category, image_file_path) VALUES

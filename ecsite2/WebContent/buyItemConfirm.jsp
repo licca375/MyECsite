@@ -57,7 +57,11 @@ table {
 }
 
 .list {
-	float: left;
+	text-align: center:
+}
+
+.pay {
+  clear: both;
 }
 </style>
 
@@ -82,41 +86,37 @@ table {
 		</div>
 		<div>
 			<s:form>
-				<s:iterator value="#session.buyItemDTOList">
-<%-- 					<s:if test="count !=0"> --%>
+				<s:iterator value="#session.list">
+
 					<div class="list">
-						<img class="image" style="width: 200px; height: 180px;"
-							src="<s:property value='image_file_path'/>"> <br>
+						<img class="image" style="width: 200px; height: 180px;"src="<s:property value='image_file_path'/>"> <br>
 						ITEM
 						<s:property value="itemName" />
-						<br> PRICE
-						<s:property value="itemPrice" />
-						<span>円</span><br> BUY
+<!-- 						<br> PRICE -->
+<%-- 						<s:property value="itemPrice" /> --%>
+<%-- 						<span>円</span><br> BUY --%>
 						<s:property value="count" />
 						<span>個</span><br>
 					</div>
 					<br>
 
-<%-- 					</s:if> --%>
 				</s:iterator>
 
-
-				<div></div>
-		PAY MENT
+<div class="clear"></div>
+		<div class="pay">
+		PAYMENT:
 		<s:property value="session.pay" />
 				<br>
 				<br>
-				<s:if test="buyItemDTOList.size()>1">
+				<s:if test="BuyItemDTOlist.size()>1">
 							合計金額:
-							<s:property value="session.totalPrice" />
-					<span>円</span>
+							<s:property value="session.totalPrice" /><span>円</span>
 				</s:if>
 				<s:else>
 							合計金額:
-							<s:property value="session.total_price" />
-					<span>円</span>
+							<s:property value="session.total_price" /><span>円</span>
 				</s:else>
-
+                </div>
 
 				<br>
 				<input type="button" value="戻る"
@@ -125,7 +125,6 @@ table {
 					onclick="submitAction('BuyItemConfirmAction')" />
 			</s:form>
 		</div>
-	</div>
 	<div>
 		<p>
 			前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
@@ -134,7 +133,7 @@ table {
 			マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a>
 		</p>
 	</div>
-	<div id="pr"></div>
+	</div>
 
 
 

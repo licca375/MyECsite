@@ -15,21 +15,27 @@ private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 private List<BuyItemDTO> buyItemDTOList = new ArrayList<BuyItemDTO>();
 
 
+/**
+ * 商品購入情報登録メソッド
+ */
 @SuppressWarnings("unchecked")
 public String execute() throws SQLException {
 
-
-String result = SUCCESS;
+String result = ERROR;
+//BuyItemActionの"list"の値を取得
 buyItemDTOList = (List<BuyItemDTO>) session.get("list");
 
 for(int i = 0; i < buyItemDTOList.size(); i++){
-
 
 	int id = buyItemDTOList.get(i).getId();
 
 	int total_price = buyItemDTOList.get(i).getTotal_price();
 
 	int count = buyItemDTOList.get(i).getCount();
+
+
+	//BuyItemCompleteDAOで定義したメソッドを使用
+			BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 	buyItemCompleteDAO.buyItemeInfo(
 			id,
 			session.get("login_user_id").toString(),
@@ -38,7 +44,7 @@ for(int i = 0; i < buyItemDTOList.size(); i++){
 			buyItemDTOList.get(i).getPay());
 
 		result = SUCCESS;
-	
+
 }
 return result;
 }

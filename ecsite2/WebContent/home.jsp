@@ -21,8 +21,8 @@ $('.abc').bxSlider({
 auto: true,
 mode: 'fade',
 speed: 1000,
-slideWidth: 500
-
+slideWidth: 500,
+pager:false,
 });
 
 });

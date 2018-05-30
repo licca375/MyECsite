@@ -5,13 +5,14 @@ import java.sql.SQLException;
 
 import com.internousdev.ecsite2.util.DBConnector;
 import com.internousdev.ecsite2.util.DateUtil;
+
 public class UserCreateCompleteDAO {
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 	private DateUtil dateUtil = new DateUtil();
-	private String sql = "INSERT INTO login_user_transaction (login_id, login_pass, user_name,insert_date) VALUES(?, ? ,?, ?)";
-	public void cerateUser(String loginUserId, String loginUserPassword, String userName) throws
-	SQLException {
+	private String sql = "INSERT INTO login_user_transaction (login_id, login_pass, user_name,insert_date) VALUES(?,?,?,?)";
+	public void cerateUser(String loginUserId, String loginUserPassword, String userName) throws SQLException {
+
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, loginUserId);

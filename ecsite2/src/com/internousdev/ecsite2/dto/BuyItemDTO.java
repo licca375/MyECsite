@@ -2,6 +2,9 @@ package com.internousdev.ecsite2.dto;
 
 public class BuyItemDTO {
 
+	/**
+	 * 商品情報を保管する変数
+	 */
 
 
 
@@ -31,6 +34,7 @@ public class BuyItemDTO {
 	return itemPrice;
 	}
 	public void setItemPrice(int itemPrice) {
+
 		this.itemPrice = itemPrice;
 		}
 		public int getId() {

@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -62,10 +64,11 @@ height: 500px;
 text-align: center;
 }
 #footer {
+position:relative;
+top:100px;
 width: 100%;
 height: 80px;
 background-color:#fff0f5;
-clear:both;
 }
 </style>
 </head>
@@ -97,10 +100,13 @@ clear:both;
 <p><img src="./image/ribbonn2.jpg" width="30" height="30">MY PAGE<img src="./image/ribbonn2.jpg" width="30" height="30"></p>
 </div>
 <div>
+<!-- 購入履歴（購入したものがない場合） -->
+<%-- <s:if test="myPageList == null"> --%>
+<!-- <h3>ご購入情報はありません。</h3> -->
+<%-- </s:if> --%>
+
 <s:if test="myPageList == null">
-<h3>ご購入情報はありません。</h3>
-</s:if>
-<s:elseif test="message == null">
+<%-- <s:elseif test="message == null"> --%>
 <h3>ご購入情報は以下になります。</h3>
 <table border="1">
 <tr>
@@ -110,7 +116,7 @@ clear:both;
 <th>支払い方法</th>
 <th>購入日</th>
 </tr>
-<s:iterator value="myPageList">
+<s:iterator value="#session.myPageList">
 <tr>
 <td><s:property value="itemName" /></td>
 <td><s:property value="totalPrice" /><span>円</span></td>
@@ -120,14 +126,21 @@ clear:both;
 </tr>
 </s:iterator>
 </table>
+
+
 <s:form action="MyPageAction">
 <input type="hidden" name="deleteFlg" value="1">
 <s:submit value="削除" method="delete" />
 </s:form>
-</s:elseif>
+</s:if>
+
+	<!-- message(MyPageActionで定義した変数）に値が入っている場合 -->
 <s:if test="message != null">
 <h3><s:property value="message"/></h3>
-</s:if><div id="text-right">
+</s:if>
+
+
+<div id="text-right">
 <p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 <p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 </div>

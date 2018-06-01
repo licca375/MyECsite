@@ -56,7 +56,7 @@ border:1px solid #ff1493;
 }
 #header {
 width: 100%;
-height: 50px;
+height: 100px;
 background-color:#fff0f5;
 top: 0;
 left:0;
@@ -76,6 +76,36 @@ height: 100px;
 background-color:#fff0f5;
 
 }
+
+.left-list{
+position: relative;
+left:20px;
+}
+
+.button {
+	 display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: #ff0080;
+	border-radius: 50%;
+	width:60px;
+	height:60px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	text-shadoe: 1px 1px 1px rgba(255,255,255,0.66);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 28);
+	background-color: #ffbbff;
+	border        : 2px solid #cc66ff;
+}
+.button:hover {
+  color         : #8080ff;
+  background    : #ffffff;
+}
+
+
+
+
 </style>
 </head>
 <body>
@@ -83,16 +113,15 @@ background-color:#fff0f5;
 
 
 		<div class="top-menu">
-
-			<div class="left-list">
-			<ul class="top-li">
-			<li><a href='<s:url action="GoHomeAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>HOME</li>
-			<li><a href='<s:url action="MyPageAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>MYPAGE</li>
+<div class="left-list">
+<ul>
+<li><a href='<s:url action="GoHomeAction"/>'><img src="./image/sozai.png"width="220" height="100"></a></li>
 			</ul>
 			</div>
 
 			<div class="right-list">
 			<ul>
+			<li><a href='<s:url action="MyPageAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>MYPAGE</li>
 			<li><a href='<s:url action="LogoutAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>LOGOUT</li>
 			<li><a href='<s:url action="InquiryAction"/>'><img src="./image/ribbonn2.jpg" width="30" height="30"></a>MAIL</li>
 			</ul>
@@ -114,7 +143,7 @@ background-color:#fff0f5;
 USER ID<s:textfield name="loginUserId" theme="simple" />
 <br>
 PASSWORD<s:password name="loginPassword" theme="simple"/>
-<s:submit value="LOGIN"/>
+<s:submit class="button" value="LOGIN"/>
 </s:form>
 <br/>
 <div>

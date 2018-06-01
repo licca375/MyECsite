@@ -46,7 +46,7 @@
 			<!-- <result name="back">buyItem.jsp</result> -->
 		</action>
 		<!-- BuyItemCompleteAction -->
-		<!-- <action name="BuyItemCompleteAction" class="com.internousdev.ecsite2.action.BuyItemCompleteAction" 
+		<!-- <action name="BuyItemCompleteAction" class="com.internousdev.ecsite2.action.BuyItemCompleteAction"
 			method="execute"> -->
 		<!-- <result name="success">buyItemComplete.jsp</result> -->
 		<!-- </action> -->
@@ -88,5 +88,20 @@
 			method="execute">
 			<result name="success">faq.jsp</result>
 		</action>
+		<!-- 商品の検索とカテゴリソート -->
+	<!-- CategorySearchAction -->
+	<action name="CategorySearchAction" class="com.internousdev.ecsite2.action.CategorySearchAction" method="execute">
+		<result name="success">buyItem.jsp</result>
+		<result name="error">buyItem.jsp</result>
+	</action>
+<!-- 商品の購入 -->
+	<!-- ProductPageAction -->
+		<action name="ProductPageAction" class="com.internousdev.ecsite2.action.ProductPageAction" method="execute">
+		<result name="success">buyItem.jsp</result>
+		<result name="master">buyItem.jsp</result>
+		<result name="error">buyItem.jsp</result>
+	</action>
+
+
 	</package>
 </struts>

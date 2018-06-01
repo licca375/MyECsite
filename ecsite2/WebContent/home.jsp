@@ -147,7 +147,7 @@ bottom: 610px;
 <header>
 
 <div class="top-menu">
-<div class="left-list"><img src="./image/sozai.png"width="220" height="110">
+<div class="left-list"><a href='<s:url action="GoHomeAction"/>'><img src="./image/sozai.png"width="220" height="110"></a>
 		</div>
 <div class="right-list">
 				<ul>
@@ -175,10 +175,6 @@ bottom: 610px;
 		<iframe src="news.html" width="25%" height="280" style="border:2px dashed #ff8c00;" scrolling="no"></iframe>
 	</div>
 <div class="left-image"><a href='<s:url action="FaqAction"/>'><img src="./image/faq.png"width="510" height="350"></a></div>
-<!-- <div class="news"> -->
-<!-- 		<h4>infomation</h4> -->
-<!-- 		<iframe src="news.html" width="25%" height="300" style="border:1px solid #a1885d;" scrolling="no"></iframe> -->
-<!-- 	</div> -->
 <footer>
 <div id="footer">
 <div id="pr">

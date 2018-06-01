@@ -70,6 +70,27 @@ width: 100%;
 height: 80px;
 background-color:#fff0f5;
 }
+.button {
+	 display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: #ff0080;
+	border-radius: 50%;
+	width:60px;
+	height:60px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	text-shadoe: 1px 1px 1px rgba(255,255,255,0.66);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 28);
+	background-color: #ffbbff;
+	border        : 2px solid #cc66ff;
+}
+.button:hover {
+  color         : #8080ff;
+  background    : #ffffff;
+}
+
 </style>
 </head>
 <body>
@@ -130,7 +151,7 @@ background-color:#fff0f5;
 
 <s:form action="MyPageAction">
 <input type="hidden" name="deleteFlg" value="1">
-<s:submit value="削除" method="delete" />
+<s:submit class="button" value="削除" method="delete" />
 </s:form>
 </s:if>
 
